@@ -1,0 +1,19 @@
+.hydraulic-cylinder-container .kv-item-group ion-note
+{
+    color: black;
+    opacity: opacity(secondary);
+    font-size: 1.6rem;
+}
+
+.hydraulic-cylinder-container ion-card
+{
+    max-width: 100%;
+    margin: 0;
+    width: 500px;
+    display: inline-block;
+}
+
+.hydraulic-cylinder-container ion-row ion-col
+{
+    padding: 16px;
+}

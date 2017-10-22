@@ -14,3 +14,25 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-item-group ion-item-divider
+{
+    font-size: 1.8rem !important;
+}
+
+ion-item-group.kv-item-group ion-item-divider
+{
+    background-color: getColor('secondary') !important;
+    color: white !important;
+}
+
+ion-item-group.input-group ion-item-divider
+{
+    background-color: getColor('primary') !important;
+    color: white !important;
+}
+
+.ion-page > ion-content
+{
+    background-color: getColor('background');
+}

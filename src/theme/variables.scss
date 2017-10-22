@@ -34,12 +34,39 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+    primary:    #d75c37,
+    secondary:  #607d8b,
+    tertiary:   #8f9240,
+    danger:     #f53d3d,
+    light:      #f4f4f4,
+    dark:       #222,
+    background: #F5F5F6
 );
+
+$font-opacities: (
+    primary: 0.87,
+    secondary: 0.54,
+    disabled: 0.38,
+    divider: 0.12
+);
+
+@function opacity($key) {
+    @if map-has-key($font-opacities, $key) {
+        @return map-get($font-opacities, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $font-opacities.";
+    @return null;
+}
+
+@function getColor($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $font-opacities.";
+    @return null;
+}
 
 
 // App iOS Variables

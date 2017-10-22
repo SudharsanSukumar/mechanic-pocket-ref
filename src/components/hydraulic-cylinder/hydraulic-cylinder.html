@@ -1,34 +1,88 @@
 <div class="hydraulic-cylinder-container">
-    <ion-list>
-        <ion-item>
-            <ion-label floating>Number Of Cylinders</ion-label>
-            <ion-input [(ngModel)]="numCylinders"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Stroke</ion-label>
-            <ion-input [(ngModel)]="stroke"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Force</ion-label>
-            <ion-input [(ngModel)]="force"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>PSIG</ion-label>
-            <ion-input [(ngModel)]="psig"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Time</ion-label>
-            <ion-input [(ngModel)]="time"></ion-input>
-        </ion-item>
-
-    </ion-list>
-
-    <ion-list>
-        <ion-item>
-            <ion-label>Bore</ion-label>
-            <p>
-                {{ 1 + 1 }}
-            </p>
-        </ion-item>
-    </ion-list>
+    <ion-row wrap>
+        <ion-col text-center>
+            <ion-card>
+                <ion-item-group class="input-group">
+                    <ion-item-divider color="light">Inputs</ion-item-divider>
+                    <ion-item>
+                        <ion-label floating>Number Of Cylinders</ion-label>
+                        <ion-input [(ngModel)]="numCylinders" (ngModelChange)="recalculateValues()"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Stroke</ion-label>
+                        <ion-input [(ngModel)]="stroke" (ngModelChange)="recalculateValues()"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Force</ion-label>
+                        <ion-input [(ngModel)]="force" (ngModelChange)="recalculateValues()"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>PSIG</ion-label>
+                        <ion-input [(ngModel)]="psig" (ngModelChange)="recalculateValues()"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Time</ion-label>
+                        <ion-input [(ngModel)]="time" (ngModelChange)="recalculateValues()"></ion-input>
+                    </ion-item>
+                </ion-item-group>
+            </ion-card>
+        </ion-col>
+        <ion-col text-center>
+            <ion-card>
+                <ion-item-group class="kv-item-group">
+                    <ion-item-divider color="light">Theoretical</ion-item-divider>
+                    <ion-item>
+                        <h2>Area</h2>
+                        <ion-note item-end>{{ theoreticalVals.area | toFixed: 3 }}</ion-note>
+                    </ion-item>
+        
+        
+                    <ion-item-divider color="light">Safety Factor</ion-item-divider>
+                    <ion-item>
+                        <h2>Bore</h2>
+                        <ion-note item-end>{{ safetyFactorVals.bore | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>Area</h2>
+                        <ion-note item-end>{{ safetyFactorVals.area | toFixed: 3 }}</ion-note>
+                    </ion-item>
+        
+        
+                    <ion-item-divider color="light">Single Cylinder</ion-item-divider>
+                    <ion-item>
+                        <h2>Bore</h2>
+                        <ion-note item-end>{{ oneCylVals.bore | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>Area</h2>
+                        <ion-note item-end>{{ oneCylVals.area | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>Volume</h2>
+                        <ion-note item-end>{{ oneCylVals.volume | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>CF</h2>
+                        <ion-note item-end>{{ oneCylVals.cf | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>&Delta;P</h2>
+                        <ion-note item-end>{{ oneCylVals.delP | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>PSIG2</h2>
+                        <ion-note item-end>{{ oneCylVals.psig2 | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>SCFM</h2>
+                        <ion-note item-end>{{ oneCylVals.scfm | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                    <ion-item>
+                        <h2>CV</h2>
+                        <ion-note item-end>{{ oneCylVals.cv | toFixed: 3 }}</ion-note>
+                    </ion-item>
+                </ion-item-group>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </div>

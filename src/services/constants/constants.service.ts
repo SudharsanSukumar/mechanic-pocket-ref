@@ -217,3 +217,7 @@ export interface BoreData {
     nfpa: BoreVal,
     low: BoreVal
 }
+
+export interface PneuData {
+    
+}

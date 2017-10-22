@@ -13,6 +13,9 @@ import { PneumaticCylinderComponent } from '../components/pneumatic-cylinder/pne
 //Services
 import { Constants } from '../services/constants/constants.service';
 
+//Pipes
+import { ToFixedPipe } from '../pipes/to-fixed.pipe';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -21,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HelloIonicPage,
     HydraulicCylinderComponent,
-    PneumaticCylinderComponent
+    PneumaticCylinderComponent,
+    ToFixedPipe
   ],
   imports: [
     BrowserModule,
